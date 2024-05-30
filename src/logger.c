@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 
-void log_message(LogLevel level, const char *message) {
+void _log_message(LogLevel level, const char *message) {
     const char *level_strings[] = {
         ANSI_COLOR_BLUE "DEBUG" ANSI_COLOR_RESET,
         ANSI_COLOR_GREEN "INFO" ANSI_COLOR_RESET,
