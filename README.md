@@ -14,4 +14,3 @@ To use the logger in your C program, follow these steps:
    ```bash
    git clone https://github.com/StjepanPrakljacic/Logger.git
    
-2. Run compile.bat script 
