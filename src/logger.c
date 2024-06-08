@@ -1,6 +1,4 @@
 #include "logger.h"
-#include <stdio.h>
-#include <time.h>
 
 void _log_message(LogLevel level, const char *message) {
     const char *level_strings[] = {

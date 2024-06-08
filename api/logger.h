@@ -9,6 +9,8 @@
  * levels of severity (DEBUG, INFO, WARNING, ERROR).
  */
 
+#include <stdio.h>
+#include <time.h>
 
 typedef enum {
     DEBUG,    /**< Debug log level for detailed debugging messages. */
