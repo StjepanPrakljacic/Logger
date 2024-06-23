@@ -6,17 +6,14 @@
  * @brief Header file for the Logger library in C.
  *
  * The Logger library provides functions for logging messages at different
- * levels of severity (DEBUG, INFO, WARNING, ERROR).
+ * levels of severity (LOG_DEBUG, LOG_INFO, LOG_WARNING, LOG_ERROR).
  */
 
-#include <stdio.h>
-#include <time.h>
-
 typedef enum {
-    DEBUG,    /**< Debug log level for detailed debugging messages. */
-    INFO,     /**< Info log level for general informational messages. */
-    WARNING,  /**< Warning log level for potential issues or unexpected behavior. */
-    ERROR     /**< Error log level for critical errors or failures. */
+    LOG_DEBUG,    /**< Debug log level for detailed debugging messages. */
+    LOG_INFO,     /**< Info log level for general informational messages. */
+    LOG_WARNING,  /**< Warning log level for potential issues or unexpected behavior. */
+    LOG_ERROR     /**< Error log level for critical errors or failures. */
 } LogLevel;
 
 #define ANSI_COLOR_RESET   "\x1b[0m"
@@ -43,4 +40,4 @@ typedef enum {
  */
 void _log_message(LogLevel level, const char *message);
 
-#endif
+#endif //LOGGER_H

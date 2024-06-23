@@ -1,11 +1,13 @@
+#include <stdio.h>
+#include <time.h>
 #include "logger.h"
 
 void _log_message(LogLevel level, const char *message) {
     const char *level_strings[] = {
-        ANSI_COLOR_BLUE "DEBUG" ANSI_COLOR_RESET,
-        ANSI_COLOR_GREEN "INFO" ANSI_COLOR_RESET,
-        ANSI_COLOR_YELLOW "WARNING" ANSI_COLOR_RESET,
-        ANSI_COLOR_RED "ERROR" ANSI_COLOR_RESET
+        ANSI_COLOR_BLUE "LOG_DEBUG" ANSI_COLOR_RESET,
+        ANSI_COLOR_GREEN "LOG_INFO" ANSI_COLOR_RESET,
+        ANSI_COLOR_YELLOW "LOG_WARNING" ANSI_COLOR_RESET,
+        ANSI_COLOR_RED "LOG_ERROR" ANSI_COLOR_RESET
         };
 
     // Get current time
