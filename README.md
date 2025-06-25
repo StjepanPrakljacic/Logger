@@ -11,7 +11,7 @@ This repository contains a simple logger implementation in C, providing a lightw
 
 # Usage
 
-1. The Logger depends on shared types defined in `common-config`. To use the logger in your C program, clone the repositorys:
+1. The Logger depends on shared types defined in `common-config`. To use the logger in your C program, clone the repositories:
   
    
    ```bash
