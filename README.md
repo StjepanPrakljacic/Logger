@@ -18,40 +18,40 @@ This repository contains a simple logger implementation in C, providing a lightw
    ```
 2. Clone with Submodule
 
-The Logger depends on shared types defined in `common-config`.
+   The Logger depends on shared types defined in `common-config`.
 
-To ensure the dependency is available, clone the repository with submodules:
+   To ensure the dependency is available, clone the repository with submodules:
 
-```bash
-git clone --recurse-submodules https://github.com/StjepanPrakljacic/Logger.git
-cd Logger
-```
-If you cloned without --recurse-submodules, initialize manually:
+   ```bash
+   git clone --recurse-submodules https://github.com/StjepanPrakljacic/Logger.git
+   cd Logger
+   ```
+   If you cloned without --recurse-submodules, initialize manually:
 
-```bash
-git submodule update --init --recursive
-```
+   ```bash
+   git submodule update --init --recursive
+   ```
 
 3. Build the Project
    
-```bash
-mkdir build && cd build
-cmake .. -DCOMMON_CONFIG_PATH=../common-config/inc
-cmake --build . -- -j4
-```
+   ```bash
+   mkdir build && cd build
+   cmake .. -DCOMMON_CONFIG_PATH=../common-config/inc
+   cmake --build . -- -j4
+   ```
 
-If you're on Windows using MinGW:
-
-```bash
-cmake .. -G "MinGW Makefiles" -DCOMMON_CONFIG_PATH=../common-config/inc
-mingw32-make
-```
+   If you're on Windows using MinGW:
+   
+   ```bash
+   cmake .. -G "MinGW Makefiles" -DCOMMON_CONFIG_PATH=../common-config/inc
+   mingw32-make
+   ```
 4. Run the tests
    
-```bash
-cd .\build\test\
-.\runTests.exe
-```
+   ```bash
+   cd .\build\test\
+   .\runTests.exe
+   ```
 
 # Contributing
 Contributions to the Error Handler project are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request on the GitHub repository.
