@@ -11,28 +11,27 @@ This repository contains a simple logger implementation in C, providing a lightw
 
 # Usage
 
-1. To use the logger in your C program, clone the repository:
-
+1. The Logger depends on shared types defined in `common-config`. To use the logger in your C program, clone the repositorys:
+  
+   
    ```bash
+   https://github.com/StjepanPrakljacic/common-config.git
    git clone https://github.com/StjepanPrakljacic/Logger.git
-   ```
-2. Clone with Submodule
-
-   The Logger depends on shared types defined in `common-config`.
-
-   To ensure the dependency is available, clone the repository with submodules:
-
-   ```bash
-   git clone --recurse-submodules https://github.com/StjepanPrakljacic/Logger.git
    cd Logger
    ```
-   If you cloned without --recurse-submodules, initialize manually:
+3. Clone as Submodule
 
    ```bash
+   git submodule add https://github.com/StjepanPrakljacic/Logger.git Logger
+   git submodule add https://github.com/StjepanPrakljacic/common-config.git common-config
    git submodule update --init --recursive
    ```
+   ```bash
+   git commit -m "Added Logger and common-config as submodules"
+   git push
+   ```
 
-3. Build the Project
+4. Build the Project
    
    ```bash
    mkdir build && cd build
@@ -46,7 +45,7 @@ This repository contains a simple logger implementation in C, providing a lightw
    cmake .. -G "MinGW Makefiles" -DCOMMON_CONFIG_PATH=../common-config/inc
    mingw32-make
    ```
-4. Run the tests
+5. Run the tests
    
    ```bash
    cd .\build\test\
