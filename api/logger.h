@@ -21,22 +21,6 @@
 /******************************************************************************
  * Macros
  *****************************************************************************/
-/**
- * @brief Shortcut macro for logging a message.
- *
- * @details This macro wraps the internal _log_message() function to provide
- * a simpler interface for adding log messages with a specified log level.
- *
- * @param level   The log level (e.g., LOG_DEBUG, LOG_INFO).
- * @param message The message string to log.
- *
- * @return E_NOT_OK
- * @retval E_OK         The message was logged successfully.
- * @retval E_NOT_OK     The message was not logged (e.g., due to log level filtering).
- */
-#ifndef Log_AddMsg
-#define Log_AddMsg(level, message) _log_message(level, message)
-#endif
 
 /******************************************************************************
  * Typedefs
@@ -81,7 +65,6 @@ typedef enum {
  */
 Std_ReturnType Logger_init(void);
 
-
 /**
  * @brief Sets the minimum log level to be printed.
  *
@@ -95,7 +78,6 @@ Std_ReturnType Logger_init(void);
  */
 Std_ReturnType Logger_setLevel(LogLevel level);
 
-
 /**
  * @brief Gets the current log level.
  *
@@ -108,23 +90,69 @@ Std_ReturnType Logger_setLevel(LogLevel level);
  */
 LogLevel Logger_getLevel(void);
 
-
 /**
- * @brief Logs a message with a specified severity level.
+ * @brief Logs a debug-level message.
  *
- * @details Prints the message with timestamp and colored log level tag if the
- *          level is equal or higher than the current log level. Messages
- *          below the current log level are filtered out and not logged.
+ * @details Formats and logs a message with the DEBUG severity level.
+ *          The message is processed like printf, supporting format specifiers.
+ *          The message is logged only if the current log level allows DEBUG messages.
  *
- * @param[in] level The severity level of the message.
- * @param[in] message The message string to log.
+ * @param[in] format A printf-style format string.
+ * @param[in] ...    Variable arguments corresponding to the format specifiers.
  *
  * @return Std_ReturnType
- * @retval E_OK         Message logged successfully.
- * @retval E_NOT_OK     Message filtered out due to log level.
+ * @retval E_OK     The message was logged successfully.
+ * @retval E_NOT_OK The message was not logged (e.g., due to log level filtering or invalid parameters).
  */
-Std_ReturnType _log_message(LogLevel level, const char *message);
+Std_ReturnType Log_DebugMessage(const char *format, ...);
 
+/**
+ * @brief Logs an info-level message.
+ *
+ * @details Formats and logs a message with the INFO severity level.
+ *          The message is processed like printf, supporting format specifiers.
+ *          The message is logged only if the current log level allows INFO messages.
+ *
+ * @param[in] format A printf-style format string.
+ * @param[in] ...    Variable arguments corresponding to the format specifiers.
+ *
+ * @return Std_ReturnType
+ * @retval E_OK     The message was logged successfully.
+ * @retval E_NOT_OK The message was not logged (e.g., due to log level filtering or invalid parameters).
+ */
+Std_ReturnType Log_InfoMessage(const char *format, ...);
+
+/**
+ * @brief Logs a warning-level message.
+ *
+ * @details Formats and logs a message with the WARNING severity level.
+ *          The message is processed like printf, supporting format specifiers.
+ *          The message is logged only if the current log level allows WARNING messages.
+ *
+ * @param[in] format A printf-style format string.
+ * @param[in] ...    Variable arguments corresponding to the format specifiers.
+ *
+ * @return Std_ReturnType
+ * @retval E_OK     The message was logged successfully.
+ * @retval E_NOT_OK The message was not logged (e.g., due to log level filtering or invalid parameters).
+ */
+Std_ReturnType Log_WarningMessage(const char *format, ...);
+
+/**
+ * @brief Logs an error-level message.
+ *
+ * @details Formats and logs a message with the ERROR severity level.
+ *          The message is processed like printf, supporting format specifiers.
+ *          The message is logged only if the current log level allows ERROR messages.
+ *
+ * @param[in] format A printf-style format string.
+ * @param[in] ...    Variable arguments corresponding to the format specifiers.
+ *
+ * @return Std_ReturnType
+ * @retval E_OK     The message was logged successfully.
+ * @retval E_NOT_OK The message was not logged (e.g., due to log level filtering or invalid parameters).
+ */
+Std_ReturnType Log_ErrorMessage(const char *format, ...);
 
 /******************************************************************************
  * Constants

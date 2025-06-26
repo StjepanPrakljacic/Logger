@@ -18,8 +18,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdarg.h>
 #include <time.h>
-#include "Logger.h"
 
 /******************************************************************************
  * Macros
@@ -50,18 +50,6 @@
 /******************************************************************************
  * Function Prototypes
  *****************************************************************************/
-/**
- * @brief Gets the current timestamp as a formatted string.
- *
- * @details Returns the current local time formatted as "[YYYY-MM-DD HH:MM:SS]".
- *
- * @param[in] None
- *
- * @return const char*
- * @retval Pointer to a static string containing the formatted timestamp.
- */
-const char *Get_Timestamp(void);
-
 
 /******************************************************************************
  * Constants
