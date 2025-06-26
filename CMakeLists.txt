@@ -1,9 +1,13 @@
 cmake_minimum_required(VERSION 3.10)
 project(Logger)
 
-option(COMMON_CONFIG_PATH "Path to common-config include directory" "")
-
 include(FetchContent)
+
+FetchContent_Declare(
+  common_config
+  GIT_REPOSITORY https://github.com/StjepanPrakljacic/common-config.git
+  GIT_TAG main
+)
 
 FetchContent_Declare(
     googletest
@@ -11,7 +15,7 @@ FetchContent_Declare(
     GIT_TAG release-1.11.0
 )
 
-FetchContent_MakeAvailable(googletest)
+FetchContent_MakeAvailable(common_config googletest)
 
 add_subdirectory(src)
 add_subdirectory(test)
