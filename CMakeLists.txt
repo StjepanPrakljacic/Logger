@@ -15,10 +15,3 @@ FetchContent_MakeAvailable(googletest)
 
 add_subdirectory(src)
 add_subdirectory(test)
-
-add_executable(Logger main.c)
-target_link_libraries(Logger PRIVATE Logger_lib)
-
-if(COMMON_CONFIG_PATH)
-    target_include_directories(Logger PUBLIC ${COMMON_CONFIG_PATH})
-endif()
